@@ -1,21 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+type User struct {
+	FirstName   string
+	LastName    string
+	PhoneNumber string
+	Age         int
+	BirthMonth  time.Month
+}
 
 func main() {
-	name := "Oscar"
+	user := User{
+		FirstName:   "Oscar",
+		LastName:    "Chiu",
+		PhoneNumber: "0912345678",
+		Age:         23,
+		BirthMonth:  7,
+	}
 
-	fmt.Println(SayHelloToUser(name))
-
-	changeUserNameByPointer(&name, "Sisyphoscar")
-
-	fmt.Println(SayHelloToUser(name))
+	user.printFirstName()
 }
 
-func SayHelloToUser(user string) string {
-	return "Hello " + user + "!"
-}
-
-func changeUserNameByPointer(name *string, newName string) {
-	*name = newName
+func (user *User) printFirstName() {
+	fmt.Println(user.FirstName)
 }
