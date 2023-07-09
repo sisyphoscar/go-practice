@@ -1,30 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
-type User struct {
-	FirstName   string
-	LastName    string
-	PhoneNumber string
-	Age         int
-	BirthMonth  time.Month
-}
+import "fmt"
 
 func main() {
-	user := User{
-		FirstName:   "Oscar",
-		LastName:    "Chiu",
-		PhoneNumber: "0912345678",
-		Age:         23,
-		BirthMonth:  7,
-	}
+	myMap := make(map[string]string)
 
-	user.printFirstName()
-}
+	myMap["First"] = "Oscar"
+	myMap["Second"] = "Sisyphoscar"
 
-func (user *User) printFirstName() {
-	fmt.Println(user.FirstName)
+	fmt.Println(myMap)
 }
