@@ -1,20 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
 
 func main() {
-	var mySlice []string
-	numbers := []int{3, 2, 1}
+	animal := "cat"
 
-	mySlice = append(mySlice, "Oscar")
-	mySlice = append(mySlice, "Sisyphoscar")
-	numbers = append(numbers, 4)
+	if animal == "human" {
+		fmt.Println("human")
+	}
 
-	sort.Ints(numbers)
-
-	fmt.Println(mySlice)
-	fmt.Println(numbers)
+	switch animal {
+	case "cat":
+		fmt.Println("cat")
+	case "dog":
+		fmt.Println("dog")
+	default:
+		fmt.Println("not matched")
+	}
 }
