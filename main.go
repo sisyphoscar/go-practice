@@ -2,29 +2,19 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"sort"
 )
 
-type User struct {
-	FirstName   string
-	LastName    string
-	PhoneNumber string
-	Age         int
-	BirthMonth  time.Month
-}
-
 func main() {
-	me := User{
-		FirstName:   "Oscar",
-		LastName:    "Chiu",
-		PhoneNumber: "0912345678",
-		Age:         23,
-		BirthMonth:  7,
-	}
+	var mySlice []string
+	numbers := []int{3, 2, 1}
 
-	myMap := make(map[string]User)
+	mySlice = append(mySlice, "Oscar")
+	mySlice = append(mySlice, "Sisyphoscar")
+	numbers = append(numbers, 4)
 
-	myMap["me"] = me
+	sort.Ints(numbers)
 
-	fmt.Println(myMap["me"].FirstName)
+	fmt.Println(mySlice)
+	fmt.Println(numbers)
 }
